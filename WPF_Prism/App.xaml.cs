@@ -1,4 +1,6 @@
-﻿using Prism.Ioc;
+﻿using ModuleA;
+using Prism.Ioc;
+using Prism.Modularity;
 using Prism.Navigation.Regions;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +28,10 @@ namespace WPF_Prism
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
 
             regionAdapterMappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
+        }
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<ModuleAModule>();
         }
     }
 }
