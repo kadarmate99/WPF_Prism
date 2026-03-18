@@ -34,6 +34,6 @@ namespace WPF_Prism.Core.Regions
             };
         }
 
-        protected override IRegion CreateRegion() => new Region();
+        protected override IRegion CreateRegion() => new SingleActiveRegion();
     }
 }
