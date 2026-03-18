@@ -5,6 +5,6 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
     <Grid>
-        <StackPanel prism:RegionManager.RegionName="ContentRegion" />
+        <StackPanel prism:RegionManager.RegionName="ContentRegion" VerticalAlignment="Center"/>
     </Grid>
 </Window>

@@ -7,7 +7,7 @@ namespace WPF_Prism.Core.Regions
 {
     public class StackPanelRegionAdapter : RegionAdapterBase<StackPanel>
     {
-        public StackPanelRegionAdapter(RegionBehaviorFactory behaviorFactory)
+        public StackPanelRegionAdapter(IRegionBehaviorFactory behaviorFactory)
             :base(behaviorFactory)
         {
             

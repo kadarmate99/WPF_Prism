@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="ModulA/ModuleA.csproj" Id="0bd8dc78-0806-4d49-8568-ad392fafada9" />
   <Project Path="WPF_Prism/WPF_Prism.csproj" Id="5f4a0506-987f-4301-bc4f-0398b5cb2ed9" />
 </Solution>
