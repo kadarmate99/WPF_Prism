@@ -4,7 +4,19 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid >
-        <StackPanel prism:RegionManager.RegionName="ContentRegion" VerticalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Save All" Margin="10" Command="{Binding SaveAllCommand}"/>
+        <TabControl Grid.Row="1" Margin="10" prism:RegionManager.RegionName="ContentRegion"/>
+        <!--<StackPanel prism:RegionManager.RegionName="ContentRegion" VerticalAlignment="Center"/>-->
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using WPF_Prism.Core.Commands;
 
 namespace WPF_Prism.ViewModels
 {
@@ -11,9 +13,16 @@ namespace WPF_Prism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainWindowViewModel()
+        private CompositeCommand _saveAllCommand;
+        public CompositeCommand SaveAllCommand
         {
+            get { return _saveAllCommand; }
+            set { SetProperty(ref _saveAllCommand, value); }
+        }
 
+        public MainWindowViewModel(IApplicationCommands applicationCommands)
+        {
+            SaveAllCommand = applicationCommands.SaveAllCommand;
         }
     }
 }
