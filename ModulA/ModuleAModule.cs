@@ -1,4 +1,5 @@
-﻿using ModuleA.Views;
+﻿using ModuleA.ViewModels;
+using ModuleA.Views;
 using System.Net.Security;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +22,7 @@ namespace ModuleA
 
             // adding views manually with view injection
             IRegion region = _regionManager.Regions["ContentRegion"];
-            
+
             var view1 = containerProvider.Resolve<ViewA>();
             region.Add(view1);
             view1.Content = new TextBlock()
@@ -31,7 +32,7 @@ namespace ModuleA
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
             };
-           
+
             var view2 = containerProvider.Resolve<ViewA>();
             view2.Content = new TextBlock()
             {
@@ -45,7 +46,9 @@ namespace ModuleA
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            // bypasses naming convention auto locator witch relays on reflection.
+            // this way we don't have to keep conventions and get a faster app
+            ViewModelLocationProvider.Register<ViewA, ViewAViewModel>();
         }
     }
 }
